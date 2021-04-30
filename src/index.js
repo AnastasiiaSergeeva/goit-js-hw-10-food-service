@@ -11,14 +11,12 @@ const refs = {
 
 refs.menuItems.insertAdjacentHTML('beforeend', menuCardsTpl(menuCard));
 
-
-
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
 
-const themeSwitcher = function() {
+function themeSwitcher () {
   if (refs.themeSwitch.checked) {
     refs.body.classList.remove(Theme.LIGHT);
     refs.body.classList.add(Theme.DARK);
@@ -30,7 +28,7 @@ const themeSwitcher = function() {
   localStorage.setItem('Theme', Theme.LIGHT);
 };
 
-const savedTheme = function() {
+function savedTheme () {
   if (localStorage.getItem('Theme') === 'dark-theme') {
     refs.body.classList.add(Theme.DARK);
     refs.themeSwitch.checked = true;
